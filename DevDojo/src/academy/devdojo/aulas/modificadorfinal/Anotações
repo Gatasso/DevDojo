@@ -1,0 +1,16 @@
+Modificador Final 
+Atributos constantes no programa, valor nao mudará.
+Decalara-se com a palavra reservada "final" no campo de atributos, e deve ter um valor em sua declaração no qual não será alterado mais.
+Sua convenção é com caracteres maiúsculos e palavras separadas por " _ ".
+Ex: public static final double VELOCIDADE_LIMITE = 250;
+
+
+Objeto final geralmente trabalha com singleton
+
+
+private final Comprador COMPRADOR= new Comprador();
+  referencia da classe Comprador para a Constante COMPRADOR jamais deverá ser alterada
+  
+  USar "final" em classe, significa que não poderá ser herdada por nenhuma outra classe, e torna-se necessário usar esse modificador em métodos, pois a classe nao poderá ser extendida
+  Usando em métodos, garante que o método não poderá ser sobreescrito.
+  

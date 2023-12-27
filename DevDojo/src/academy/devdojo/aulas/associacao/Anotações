@@ -1,0 +1,27 @@
+
+	formas de criar um array de objetos:
+	Jogador[] jogadores = new Jogador[3];
+      	Jogador[] jogadores = new Jogador[]{jogador1,jogador2,jogador3};
+  	Jogador[] jogadores = {jogador1,jogador2,jogador3};
+        
+        
+        jogadores -> | 0 | 1 | 2 | (espaço em memoria) -> jogador1[Pelé] | jogador1[Maradona] | jogador1[Romario] (objetos com espaço em memória)
+	2 referencias para cada nome.
+	
+	
+	Jogador 1 -- 1 Personagem {Associação Unidirecional 1/1}
+	Jogador N -- 1 Time	   {Associação Unidirecional  N/1}
+		aqui, há vários jogadores pertencentes a um time, entretanto, o time é so uma referencia, e nao tem conhecimento dos jogadores que a ele pertence.	
+		criamos um atributo da classe Time dentro da classe jogador, e podemos ajustar o time por setters(assim, jogadores sem time podem ser criados).
+	Time 1 -- N jogadores     {Associação Bidirecional 1/N}
+		neste caso, o time precisa ser informado sobre quais e quantos são seus jogadores, e podemos extrair a informação de um a partir do outro.
+		para isso, cria-se um atributo da classe Jogador dentro da classe time como um array, assim, varios jogadores podem ser atribuidos a um time ao serem criados como objetos.
+	     """Jogador jogador1 = new Jogador("xxxxx");
+		Time time1 = new Time("yyyyy");
+		Jogador[] jogadores = new Jogador[n];
+		jogador1.setTime(time1);"""
+	
+	
+	charAt(posicao) - método de uma string que verifica o char na posição do parametro. usada para verificações em estruturas condicionais.
+	
+	

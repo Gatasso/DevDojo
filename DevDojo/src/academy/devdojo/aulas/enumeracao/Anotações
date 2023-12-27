@@ -1,0 +1,25 @@
+
+Enum serve para poder Tipar um objeto, uma classe onde os atributos são constantes, statics e finals e os tipos são enumerados(PessoaFisica e PessoaJuridica)
+é possivel criar enumeracoes dentro de classes;
+convenção é feita como constante.
+
+enum continua sendo uma classe, e portanto, possui construtores e métodos.
+voce pode converter os tipos desejados para valores como 1,2,3... adicionando o parametro ao construtor, e ao enumerar os itens, voce passará esse valor como parametro
+o construtor é privado, portanto o enumerador que irá chamá-lo
+
+sobreescrevendo metodos na enumeração
+enumerar e abrir chaves, é praticamente abrir uma nova classe dentro da classe enum
+ctrl+o, atalho para sobreescrever. épossivel sobreescrever o método criado na propria classe enum, dentro de uma enumeração
+
+quando o metodo é criado mas nao terá comportamento algum, e sim suas sobre escritas que ditarão o comportamento, deve se retirar o corpo e definir o metodo como o abstrato. entretanto, todas as enumerações deverão conter o metodo, pois a classe terá erro.
+
+^ evitando utilizar if para definir comportamentos entre tipos diferentes ^
+
+retornar enumeração baseado nos atributos, achar outros atributos da enumeração, mas contendo apenas um atributo String para identificar a enumeração.
+valueOf() nao retorna baseado no tipo, mas sim no nome, ou seja, retorna atributos de uma enum, pela propria enum:
+	TipoCliente tipoCliente = TipoCliente.valueOf("PESSOA_FISICA");
+	System.out.println(tipoCliente.getNomeRelatorio());
+	
+values() dentro do metodo percorrendo os atributos de um enum, e, com logica "if" encontrar o atributo desejado, e retorna o enum pertencente
+
+
