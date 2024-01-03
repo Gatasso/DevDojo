@@ -6,7 +6,7 @@ public enum TypeSuits {
     DIAMONDS("Diamonds"),
     SPADES("Spades");
 
-    private String name;
+    private final String name;
 
     TypeSuits(String name) {
         this.name = name;
