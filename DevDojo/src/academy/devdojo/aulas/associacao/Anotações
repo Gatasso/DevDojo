@@ -10,9 +10,11 @@
 	
 	
 	Jogador 1 -- 1 Personagem {Associação Unidirecional 1/1}
+	
 	Jogador N -- 1 Time	   {Associação Unidirecional  N/1}
 		aqui, há vários jogadores pertencentes a um time, entretanto, o time é so uma referencia, e nao tem conhecimento dos jogadores que a ele pertence.	
 		criamos um atributo da classe Time dentro da classe jogador, e podemos ajustar o time por setters(assim, jogadores sem time podem ser criados).
+		
 	Time 1 -- N jogadores     {Associação Bidirecional 1/N}
 		neste caso, o time precisa ser informado sobre quais e quantos são seus jogadores, e podemos extrair a informação de um a partir do outro.
 		para isso, cria-se um atributo da classe Jogador dentro da classe time como um array, assim, varios jogadores podem ser atribuidos a um time ao serem criados como objetos.
