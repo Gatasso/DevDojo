@@ -2,8 +2,8 @@ package academy.devdojo.exercicios.jogocartas.domain;
 
 public class Card {
 
-    private TypeCards cardName;
-    private TypeSuits cardSuit;
+    private final TypeCards cardName;
+    private final TypeSuits cardSuit;
 
     public Card(TypeCards cardValue, TypeSuits cardSuit) {
         this.cardName = cardValue;

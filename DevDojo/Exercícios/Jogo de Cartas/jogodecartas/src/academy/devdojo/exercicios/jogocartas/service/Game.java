@@ -5,15 +5,13 @@ import academy.devdojo.exercicios.jogocartas.domain.Player;
 
 public class Game {
     private Player[] players;
-    private Card[] gameDeck;
     private Games gameMod;
     private int indexDeck = 0;
 
     public Game(Player[] players, Card[] shuffledDeck, Games gameMod) {
         this.players = players;
-        this.gameDeck = shuffledDeck;
         this.gameMod = gameMod;
-        setupCards(gameDeck);
+        setupCards(shuffledDeck);
     }
     public void setupCards(Card[] gameDeck) {
         for (Player player : players) {

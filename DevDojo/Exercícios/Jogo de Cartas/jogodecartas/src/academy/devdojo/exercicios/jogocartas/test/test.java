@@ -12,12 +12,15 @@ public class test {
         Deck deck1 = new Deck();
         Player player1 = new Player("P1", Games.MORE_THAN);
         Player player2 = new Player("P2", Games.MORE_THAN);
-        Player [] players = {player1,player2};
+        Player player3 = new Player("P3", Games.MORE_THAN);
+        Player [] players = {player1,player2,player3};
         Game game = new Game(players,deck1.getShuffledDeck(), Games.MORE_THAN);
 
         System.out.println(player1);
         System.out.println(player2);
+        System.out.println(player3);
         System.out.println(Arrays.toString(players));
+
         //criar teste para verificar se os jogadores estão recebendo as cartas iniciais
     }
 }
