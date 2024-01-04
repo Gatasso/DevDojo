@@ -13,7 +13,6 @@ public class Game {
         this.players = players;
         this.gameDeck = shuffledDeck;
         this.gameMod = gameMod;
-        setupCards();
         setupCards(gameDeck);
     }
     public void setupCards(Card[] gameDeck) {
