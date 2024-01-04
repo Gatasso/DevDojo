@@ -4,14 +4,10 @@ import java.util.Random;
 
 public class Deck {
     private Card[] deck;
-    public Card[] shuffledDeck;
+    private Card[] shuffledDeck;
 
     public Deck() {
         create();
-        for (Card card : deck) {
-            System.out.println(card);
-        }
-        System.out.println("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/");
         shuffle();
         for (Card card : shuffledDeck) {
             System.out.println(card);
@@ -48,8 +44,11 @@ public class Deck {
                 return false;
             }
         }
-        System.out.println("inserted on shuffled deck");
         return true;
+    }
+
+    public Card[] getShuffledDeck() {
+        return shuffledDeck;
     }
 }
 
