@@ -1,0 +1,16 @@
+
+Use deck size as a constant DECK_SIZE creating a field and doing the calculation there; [DONE]
+
+
+Print the deck, not in the constructor, but in a separate method "printDeck"; [DONE]
+
+Game Class: games logic -> Turns,Win Conditions, Exchanges, Buying Cards;
+
+
+Add some verifications to see if the arrays are not null or have the appropriate lenght(maybe number of players);[DONE]
+
+
+Add a check to the indexDeck to make the index be less than the decklenght;[DONE]
+
+
+
