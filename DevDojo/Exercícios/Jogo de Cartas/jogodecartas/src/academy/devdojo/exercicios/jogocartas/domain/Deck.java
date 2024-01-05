@@ -3,19 +3,18 @@ package academy.devdojo.exercicios.jogocartas.domain;
 import java.util.Random;
 
 public class Deck {
+    private final int DECK_SIZE = TypeCards.values().length * TypeSuits.values().length;
     private Card[] deck;
     private Card[] shuffledDeck;
 
     public Deck() {
         create();
         shuffle();
-        for (Card card : shuffledDeck) {
-            System.out.println(card);
-        }
+//        printShuffledDeck();
     }
 
     public void create() {
-        deck = new Card[TypeCards.values().length * TypeSuits.values().length];
+        deck = new Card[DECK_SIZE];
         int index = 0;
         for (TypeCards typeCard : TypeCards.values()) {
             for (TypeSuits suit : TypeSuits.values()) {
@@ -27,7 +26,7 @@ public class Deck {
     }
 
     public void shuffle() {
-        shuffledDeck = new Card[TypeCards.values().length * TypeSuits.values().length];
+        shuffledDeck = new Card[DECK_SIZE];
         Random randomSequence = new Random();
         for (int i = 0; i < deck.length; i++) {
             int randomCard;
@@ -45,6 +44,12 @@ public class Deck {
             }
         }
         return true;
+    }
+
+    public void printShuffledDeck() {
+        for (Card card : shuffledDeck) {
+            System.out.println(card);
+        }
     }
 
     public Card[] getShuffledDeck() {
