@@ -52,6 +52,10 @@ public class Deck {
         }
     }
 
+    public int getLengthOfDeck(){
+        return shuffledDeck.length;
+    }
+
     public Card[] getShuffledDeck() {
         return shuffledDeck;
     }
