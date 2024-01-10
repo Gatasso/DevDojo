@@ -7,13 +7,17 @@ public class Deck {
     private Card[] deck;
     private Card[] shuffledDeck;
 
-    public Deck() {
+    /****************************************************************
+     constructors */
+    public Deck() {                                                                     // The constructor of the deck involves the creation of all playable cards, as well the shuffling of then
         create();
         shuffle();
 //        printShuffledDeck();
     }
 
-    public void create() {
+    /****************************************************************
+     methods*/
+    public void create() {                                                              // All cards must have a Name and a Suit, implementing the respective Enums in a for loop
         deck = new Card[DECK_SIZE];
         int index = 0;
         for (TypeCards typeCard : TypeCards.values()) {
@@ -25,7 +29,7 @@ public class Deck {
         }
     }
 
-    public void shuffle() {
+    public void shuffle() {                                                             //  Using the java.util.Random algorithm to pick a random card and storing in a new Deck array
         shuffledDeck = new Card[DECK_SIZE];
         Random randomSequence = new Random();
         for (int i = 0; i < deck.length; i++) {
@@ -37,7 +41,7 @@ public class Deck {
         }
     }
 
-    private boolean verifyShuffle(int randomCard, int currentIndex) {
+    private boolean verifyShuffle(int randomCard, int currentIndex) {                   //  This method is useful to check the random card picked by the random algorithm and repick if its repeated before store in array
         for (int i = 0; i < currentIndex; i++) {
             if (shuffledDeck[i] != null && deck[randomCard].equals(shuffledDeck[i])) {
                 return false;
@@ -46,13 +50,15 @@ public class Deck {
         return true;
     }
 
-    public void printShuffledDeck() {
+    public void printShuffledDeck() {                                                   // using this method to test and see all bugs, but later I will use this for more functions
         for (Card card : shuffledDeck) {
             System.out.println(card);
         }
     }
 
-    public int getLengthOfDeck(){
+    /****************************************************************
+     getters and setters*/
+    public int getLengthOfDeck() {
         return shuffledDeck.length;
     }
 

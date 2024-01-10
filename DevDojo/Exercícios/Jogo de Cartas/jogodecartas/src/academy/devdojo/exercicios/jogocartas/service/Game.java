@@ -8,8 +8,9 @@ public class Game {
     private Player[] players;
     private final Games gameMod;
     private int indexDeck = 0;
-
-    public Game(Player[] players, Card[] shuffledDeck, Games gameMod) {
+    /****************************************************************
+     constructors */
+    public Game(Player[] players, Card[] shuffledDeck, Games gameMod) {             // 1st version of the Games, thought it would be better to create the game after creating the entire environment, but it's good to test somethings
         this.players = players;
         this.gameMod = gameMod;
         if (players.length > gameMod.NUMBER_OF_PLAYERS || shuffledDeck == null) {
@@ -19,7 +20,7 @@ public class Game {
         setupCards(shuffledDeck);
     }
 
-    public Game(Card[] shuffledDeck,Games gameMod) {
+    public Game(Card[] shuffledDeck,Games gameMod) {                                // 2nd version ,Improved the game system by creating the players after initialize the game, worth it
         this.gameMod = gameMod;
         createPlayers();
         if (players.length > gameMod.NUMBER_OF_PLAYERS || shuffledDeck == null) {
@@ -30,18 +31,21 @@ public class Game {
         printPlayerHands();
     }
 
-    public Game(Games gameMod) {
+    public Game(Games gameMod) {                                                    // 3rd version, and probably the final one of the overloading constructors, only receiving the game mod, creating the deck, cards and players after initialize
         this.gameMod = gameMod;
         createPlayers();
         Deck gameDeck = new Deck();
-        if (players.length > gameMod.NUMBER_OF_PLAYERS || gameDeck == null){
+//        gameDeck.printShuffledDeck();
+        if (players.length > gameMod.NUMBER_OF_PLAYERS){
             System.out.println("Não foi possível criar o Baralho");
             return;
         }
         setupCards(gameDeck);
     }
 
-    public void createPlayers(){
+    /****************************************************************
+     methods*/
+    public void createPlayers(){                                                    // Create the players referencing the enum parameter for NUM_MAX_Players and store them to the players array giving the name and passing the game mod chosen
         this.players = new Player[gameMod.NUMBER_OF_PLAYERS];
         for (int i = 0; i < gameMod.NUMBER_OF_PLAYERS; i++) {
             int playerNumber = i+1;
@@ -50,7 +54,7 @@ public class Game {
         }
     }
 
-    public void printPlayerHands(){
+    public void printPlayerHands(){                                                 // Prints the players cards, but every player in game, not one specific
         System.out.println(this.gameMod);
         for (Player player : players) {
             System.out.println(player.toString());
@@ -58,7 +62,7 @@ public class Game {
         System.out.println("***************************************************");
     }
 
-    public void setupCards(Card[] gameDeck) {
+    public void setupCards(Card[] gameDeck) {                                      //  This method sends the initial card to the players
         for (Player player : players) {
             for (int i = 0; i < gameMod.INITIAL_CARDS; i++) {
                 if (indexDeck < gameDeck.length) {
@@ -68,7 +72,7 @@ public class Game {
             }
         }
     }
-    public void setupCards(Deck gameDeck){
+    public void setupCards(Deck gameDeck){                                          // 2nd version of the setupCards, but sending the cards of the Construtor Games Deck created
         for (Player player : players) {
             for (int i = 0; i < gameMod.INITIAL_CARDS; i++) {
                 if (indexDeck < gameDeck.getLengthOfDeck()) {
@@ -77,7 +81,7 @@ public class Game {
                 }
             }
         }
-        for (Player player : players) {
+        for (Player player : players) {                                             // this part shows the information of the player and your hand, but its only for testing
             System.out.println(player.toString());
         }
 

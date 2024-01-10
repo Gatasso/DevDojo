@@ -14,7 +14,7 @@ public enum Games implements GameRules{
             return false;
         }
     },
-    BLACKJACK(3, 3){
+    BLACKJACK(3, 2){
         @Override
         public void winCondition() {
 
@@ -27,7 +27,8 @@ public enum Games implements GameRules{
     };
 
     public final int NUMBER_OF_PLAYERS, INITIAL_CARDS;
-
+    /****************************************************************
+     constructors */
     Games(int NUMBER_OF_PLAYERS, int INITIAL_CARDS) {
         this.NUMBER_OF_PLAYERS = NUMBER_OF_PLAYERS;
         this.INITIAL_CARDS = INITIAL_CARDS;
