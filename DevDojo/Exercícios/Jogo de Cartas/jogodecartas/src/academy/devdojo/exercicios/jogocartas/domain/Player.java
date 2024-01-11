@@ -27,5 +27,11 @@ public class Player {
     public void setHand(Card newCard, int i) {
         this.hand[i] = newCard;
     }
+
+    public Card[] getHand() {
+        return hand;
+    }
+
+    public void
 }
 

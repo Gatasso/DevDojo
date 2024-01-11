@@ -84,6 +84,7 @@ public class Game {
         for (Player player : players) {                                             // this part shows the information of the player and your hand, but its only for testing
             System.out.println(player.toString());
         }
-
     }
+
+
 }

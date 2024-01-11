@@ -1,6 +1,6 @@
 package academy.devdojo.exercicios.gungames.domain;
 
-public enum GUNS {
+public enum GunType {
     PISTOL {
         
     },
