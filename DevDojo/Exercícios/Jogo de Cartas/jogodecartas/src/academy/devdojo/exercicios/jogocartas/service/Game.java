@@ -8,6 +8,7 @@ public class Game {
     private Player[] players;
     private final Games gameMod;
     private int indexDeck = 0;
+
     /****************************************************************
      constructors */
     public Game(Player[] players, Card[] shuffledDeck, Games gameMod) {             // 1st version of the Games, thought it would be better to create the game after creating the entire environment, but it's good to test somethings
@@ -20,7 +21,7 @@ public class Game {
         setupCards(shuffledDeck);
     }
 
-    public Game(Card[] shuffledDeck,Games gameMod) {                                // 2nd version ,Improved the game system by creating the players after initialize the game, worth it
+    public Game(Card[] shuffledDeck, Games gameMod) {                                // 2nd version ,Improved the game system by creating the players after initialize the game, worth it
         this.gameMod = gameMod;
         createPlayers();
         if (players.length > gameMod.NUMBER_OF_PLAYERS || shuffledDeck == null) {
@@ -36,25 +37,28 @@ public class Game {
         createPlayers();
         Deck gameDeck = new Deck();
 //        gameDeck.printShuffledDeck();
-        if (players.length > gameMod.NUMBER_OF_PLAYERS){
+        if (players.length > gameMod.NUMBER_OF_PLAYERS) {
             System.out.println("Não foi possível criar o Baralho");
             return;
         }
         setupCards(gameDeck);
+        if (verifyWinCondition(players) != null){
+            System.out.println("O vencedor é: " + verifyWinCondition(players));
+        } else System.out.println("EMPATE");
     }
 
     /****************************************************************
      methods*/
-    public void createPlayers(){                                                    // Create the players referencing the enum parameter for NUM_MAX_Players and store them to the players array giving the name and passing the game mod chosen
+    public void createPlayers() {                                                    // Create the players referencing the enum parameter for NUM_MAX_Players and store them to the players array giving the name and passing the game mod chosen
         this.players = new Player[gameMod.NUMBER_OF_PLAYERS];
         for (int i = 0; i < gameMod.NUMBER_OF_PLAYERS; i++) {
-            int playerNumber = i+1;
-            String playerName = "Player"+playerNumber;
-            players[i] = new Player(playerName,gameMod);
+            int playerNumber = i + 1;
+            String playerName = "Player" + playerNumber;
+            players[i] = new Player(playerName, gameMod);
         }
     }
 
-    public void printPlayerHands(){                                                 // Prints the players cards, but every player in game, not one specific
+    public void printPlayerHands() {                                                 // Prints the players cards, but every player in game, not one specific
         System.out.println(this.gameMod);
         for (Player player : players) {
             System.out.println(player.toString());
@@ -72,7 +76,8 @@ public class Game {
             }
         }
     }
-    public void setupCards(Deck gameDeck){                                          // 2nd version of the setupCards, but sending the cards of the Construtor Games Deck created
+
+    public void setupCards(Deck gameDeck) {                                          // 2nd version of the setupCards, but sending the cards of the Construtor Games Deck created
         for (Player player : players) {
             for (int i = 0; i < gameMod.INITIAL_CARDS; i++) {
                 if (indexDeck < gameDeck.getLengthOfDeck()) {
@@ -86,5 +91,7 @@ public class Game {
         }
     }
 
-
+    public Player verifyWinCondition(Player[] playersInGame) {
+        return gameMod.winCondition(playersInGame);
+    }
 }

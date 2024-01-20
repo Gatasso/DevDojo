@@ -23,17 +23,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/galasso/Documentos/EstudosJava/DevDojo",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/galasso/Documentos/EstudosJava/DevDojo&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DevDojo/Aulas" />
@@ -68,6 +68,11 @@
       <workItem from="1704936057729" duration="179000" />
       <workItem from="1704992559547" duration="38000" />
       <workItem from="1704992605618" duration="11000" />
+      <workItem from="1705085526303" duration="5000" />
+      <workItem from="1705087360387" duration="4000" />
+      <workItem from="1705087375274" duration="21000" />
+      <workItem from="1705087431964" duration="8000" />
+      <workItem from="1705689680117" duration="29000" />
     </task>
     <task id="LOCAL-00001" summary="Move some directorys to the right Place">
       <option name="closed" value="true" />
