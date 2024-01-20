@@ -13,6 +13,8 @@ public class test {
         Deck deck2 = new Deck();
         Game game1 = new Game(deck1.getShuffledDeck(), Games.MORE_THAN);
         Game game2 = new Game(deck2.getShuffledDeck(), Games.BLACKJACK);
+        Player player= new Player("p1",Games.MORE_THAN);
+
 
 //        Player player1 = new Player("P1", Games.BLACKJACK);
 //        Player player2 = new Player("P2", Games.BLACKJACK);
@@ -25,4 +27,5 @@ public class test {
 //        System.out.println(player3);
 //        System.out.println(Arrays.toString(players));
     }
+
 }

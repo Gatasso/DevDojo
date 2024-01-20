@@ -1,7 +1,9 @@
 package academy.devdojo.exercicios.jogocartas.service;
 
+import academy.devdojo.exercicios.jogocartas.domain.Player;
+
 public interface GameRules {
-    void winCondition();
-    boolean verifyWinCondition();
+    Player winCondition(Player[] players);
+//    boolean verifyWinCondition(Player[] playersInGame);
 
 }
