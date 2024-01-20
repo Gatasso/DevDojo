@@ -17,9 +17,18 @@ public class Player {
 
     /****************************************************************
      methods*/
-    @Override                                                                          // Shows the Player name and initial Hand
+    @Override
+    // Shows the Player name and initial Hand
     public String toString() {
         return name + ", hand=" + Arrays.toString(hand);
+    }
+
+    public int getTotalValueCards(){
+        int totalValueCards = 0;
+        for (Card card : hand) {
+            totalValueCards += card.getCardValue();
+        }
+        return totalValueCards;
     }
 
     /****************************************************************
@@ -27,11 +36,5 @@ public class Player {
     public void setHand(Card newCard, int i) {
         this.hand[i] = newCard;
     }
-
-    public Card[] getHand() {
-        return hand;
-    }
-
-    public void
 }
 
