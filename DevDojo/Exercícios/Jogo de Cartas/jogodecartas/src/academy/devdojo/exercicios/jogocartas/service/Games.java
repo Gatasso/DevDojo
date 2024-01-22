@@ -2,21 +2,21 @@ package academy.devdojo.exercicios.jogocartas.service;
 
 import academy.devdojo.exercicios.jogocartas.domain.Player;
 
-public enum Games implements GameRules{
-    MORE_THAN(2, 2) {
+public enum Games implements GameRules {
+    MORE_THAN(3, 3) {
         @Override
         public Player winCondition(Player[] players) {
-            int index = 0;
             int[] positionPlayer = new int[NUMBER_OF_PLAYERS];
-                for (Player player : players) {
-                    positionPlayer[index] =  player.getTotalValueCards();
-                    index++;
+            int index = 0, maxAt = 0;
+            for (Player player : players) {
+                positionPlayer[index] = player.getTotalValueCards();
+                index++;
+            }
+            for (int i = 1; i < positionPlayer.length; i++) {
+                if (positionPlayer[i]>positionPlayer[maxAt]){
+                    maxAt = i;
                 }
-            if (positionPlayer[0] > positionPlayer[1]){
-                return players[0];
-            } else if (positionPlayer[0] < positionPlayer[1]) {
-                return players[1];
-            }else return null;
+            } return players[maxAt];
         }
     },
     BLACKJACK(3, 2) {
