@@ -1,11 +1,11 @@
 package academy.devdojo.exercicios.jogocartas.service;
 
-import academy.devdojo.exercicios.jogocartas.domain.Card;
-import academy.devdojo.exercicios.jogocartas.domain.Deck;
-import academy.devdojo.exercicios.jogocartas.domain.Player;
+import academy.devdojo.exercicios.jogocartas.domain.*;
+
 
 public class Game {
     private Player[] players;
+    private Deck deck;
     private final Games gameMod;
     private int indexDeck = 0;
 
@@ -40,11 +40,12 @@ public class Game {
         if (players.length > gameMod.NUMBER_OF_PLAYERS) {
             System.out.println("Não foi possível criar o Baralho");
             return;
+        } else if (gameMod.NUMBER_OF_PLAYERS * gameMod.INITIAL_CARDS > TypeCards.values().length * TypeSuits.values().length) {
+            System.out.println("Não foi possível criar o Baralho");
+            return;
         }
         setupCards(gameDeck);
-        if (verifyWinCondition(players) != null){
-            System.out.println("O vencedor é: " + verifyWinCondition(players));
-        } else System.out.println("EMPATE");
+        verifyWinCondition();
     }
 
     /****************************************************************
@@ -91,7 +92,10 @@ public class Game {
         }
     }
 
-    public Player verifyWinCondition(Player[] playersInGame) {
-        return gameMod.winCondition(playersInGame);
+    public void verifyWinCondition() {                                              // This method calls the veification of win condtion and returns the player who wons.
+        if (gameMod.winCondition(players) != null){
+            System.out.println("O vencedor é: " + gameMod.winCondition(players));
+        } else System.out.println("EMPATE");
+//        return gameMod.winCondition(playersInGame);
     }
 }
