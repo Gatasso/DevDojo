@@ -13,4 +13,15 @@ Válido lembrar que O frame(prato) é criado à cada chamada de método ou funç
 -------------------------------------------------------------------------------------------------------
 Aula 02
 
+Erros /= Exception ---> SubClasses de Throwable(lançado)
+Todo error ou excpetion é lançado, mas ambos são totalmente diferentes.
+
+Exceptions podem ser Checked(checadas) ou Unchecked(nao checadas)
+Checked- filhas diretas de Exception, e, se não tratadas, lançarão erros no tempo de compilação(nao sera possivel compilar). Ex: I/O Exception//SQLException.
+Unchecked- filhas de Exception(incluindo RunTime). Quando lançadas pelo programa, o prolema está no desenvolvimento, no desenvolvedor(cagadas do dev). Ex: NUllPointe//NumberFormat//Cast.
+
+
+
+
+
 
