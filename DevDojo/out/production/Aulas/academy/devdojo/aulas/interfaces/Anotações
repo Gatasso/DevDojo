@@ -1,0 +1,30 @@
+
+Interfaces são parecidas com Abstratas, foram criadas para serem contratos de classe;
+
+Interface não é uma classe, e não pode ser atribuido como final;
+
+Por padrao os metodos são public abstract, podem ser acessados por qualquer lugar, e são obrigatorios nas classes que a implementarem. "void load()" <- exemplo de sintaxe para criação de método;
+
+Ao trabalhar com interface, usamos "implements" para uma classe aderir a esse contrato;
+
+Há a implementação de mulitplas interfaces, separadas por ",", infinitamente;
+
+Interfaces podem ter métodos com implementação(comportamento) e destacados por "default", assim, não se torna necessário implementar obrigatoriamente;
+
+Interfaces não são instanciáveis para construção de objetos;
+
+Por padrão, nas sobreesctiras, o modificados não pode ser mais restritivo do que na super classe:
+	private > default > protected > public;
+	
+Os atributos criados na interface são publicos, estáticos e finais por padrão;
+
+É possivel criar métodos estaticos nas interfaces;
+
+Programação Orientada a Interface, melhorando manutenção e leitura do código, desacoplando o código e utilizando Polimorfismo;
+
+
+
+
+
+
+
