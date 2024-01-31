@@ -1,0 +1,28 @@
+
+criar relacionamnto(associacao) é criar acoplamento, é dificultar utilziar as classes para mais objetos.
+atributos iguais podem ser aproveitados para diversas classes, aplicando o princípio de Herança e extensão. ex: Pessoa - nome,cpf,endereço... Funcionario - nome,cpf,endereço,salario...
+Funcionario é uma Pessoa (Funcionario extends Pessoa);
+Extends extende todos os atributos de classe extendida, mas é capaz de adicionar particularidades, como por exemplo o salario. Funcionario tem salario, pessoa não;
+Utiliza-se quando quer extender funcionalidade de uma classe mas quer continuar a relação com outras classes;
+Perigoso utilizar herança sempre, pois tudo que for alterado na classe mãe, afetará todas as outras herdadas(inclusão ou exclusão de atributos, métodos e construtores);
+Pode se extender apenas uma classe;
+
+Modificador de acesso Protected dá acesso a todas as subclasses e todas as classes do pacote; 
+
+Override - sobreescrita de um método extendido da Super Classe para atender as individualidades de cada objeto;
+
+Todas as classes são filhas de uma Super Classe "Object"
+
+Inicialização:
+1- bloco de inicialização estático da Super classe é executado quando a Virtual Machine carregar;
+2- bloco de inicialização estático da subclasse é executado;
+3- aloca espaço em memoria para objeto da super classe;
+4- criação dos atributos da classe é inicializado;
+5- bloco de inicialização da superclasse é executado;
+6- construtor da superclasse é executado;
+7- passos 3-6 executados para subclasses;
+
+
+
+
+
