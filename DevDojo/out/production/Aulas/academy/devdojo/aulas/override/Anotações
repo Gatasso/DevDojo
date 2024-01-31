@@ -1,0 +1,8 @@
+
+
+Override do metodo ToString
+metodo toString é executado sempre que imprimir algo com Sout
+nome do metodo precisa ser o mesmo, assim coomo a quantidade de parametros;
+tipo de retorno tem q ser a classe ou subclasse(covariancia de retorno);
+modificdor de acesso nao pode ser mais restritivo;
+
