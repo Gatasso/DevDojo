@@ -1,0 +1,28 @@
+Ao criar pacotes, separar o Modelo de Negócio do Domínio com o que visualiza-se;
+
+Analogia do Controle Remoto:
+	Samsumg 2019(controle e TV). Funcionalidades: Netflix e Prime. 
+	Televisão Executa ações, mas comandadas pelo Controle.
+	Controle = variável de referência;
+	Televisão = Objeto;
+   ex: Computador c new Computador();	
+   
+   entretanto, com polimorfismo(multiplas formas), pode trocar o tipo da variavel de referencia mas continuar usando os mesmos objetos, aplicado na herança;
+   ou seja, é possível usar a referencia(superclasse) para criar um objeto distinto da referencia(subclasse)
+   ex: Produto produto = new Computador(); // widening cast(implicito)
+   assim, a execução será responsabilidade do objeto(computador), mas comandada pela referência(produto);
+   Cria-se,portanto, um Objeto específico instanciado em uma Referência Genérica
+   
+   A ideia do polimorfismo é tornar o código escalonável,ou seja, criar métodos e comportamentos genéricos para que possam ser reaproveitados por diferentes Objetos;
+   
+   if (produto instanceof xxx) {}
+   instanceof é um comparador da referencia ao qual o objeto foi criado, podemos usar ela para adicionar linhas de codigo a um relatorio caso o produto especifico seja um objeto do tipo x
+   
+   Tomate tomate = (Tomate) produto; //narrowing cast(explicito)
+   
+   package repositorio = geralmente o local onde se pega os dados de um db;
+   
+   
+   
+   
+   
