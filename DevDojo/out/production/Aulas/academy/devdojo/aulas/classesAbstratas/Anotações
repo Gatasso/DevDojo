@@ -1,0 +1,17 @@
+
+classes abstratas criadas para resolver problemas de implementação do design de classes(desenho de codigo)
+
+ao colocar o abstract, a classe em questao funciona como template, e nao como objeto em si(inclusive da erro), algo não concreto (ex: Funcionario)
+
+possui construtores, atributos e métodos, pois definem o template de qualquer subclasse criada a partir dela
+
+nao pode ser final, pois classes abstratas PRECISAM ser extendidas(feitas para serem superclasses), e o modificador final NÃO PERMITE extender
+
+verdadeiro poder do abstract: métodos
+
+quando precisa-se que todas as subclasses ao criar-se um objeto instanciado precisa definir uma ação, mas cada subclasse com sua caracteristica, colocase a flag abstract no metodo(removendo o comportamento na classe abstrata) e obriga a criar em todas as outras subclasses
+
+classe abstrata pode ter metodos abstratos e concretos(com comporamentos)
+metodos abstratos so podem existir em classes abstratas
+
+Quando uma classe abstrata é filha de um classe abstrata, a mesma nao precisa implementar os métodos, apenas as casses concretas netas da classe abstrata originaria do metodo
