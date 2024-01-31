@@ -1,0 +1,16 @@
+Exceções vão coletar erros inesperados do fluxo de trabalho e trata eles.
+Internet cai e nao há conexão com o banco de dados,
+Há diversas formas e classes ja montadas para tratar os erros inesperados.
+
+Exceções são objetos, pertencem a classe Throwable(superclasse/mãe)
+Error e Exception
+
+Errors são situações onde não há recuperações em tempo de execução, ou seja, precisa parar o sistema, resolver e reiniciar. Ex: sistema rodando e acaba a memória disponivel: "Out of memory error".
+
+Stack é como uma "pilha de pratos", relacionado à chamadas de métodos e funções. A Stack é uma área de memória que vai armazenar essas chamadas,parametros, variáveis retornos, etc. Entretanto, se o frame(quadro) desse Stack não tiver um fim pré determinado(principalmente em funções e métodos recursivos)ou um tratamento adequado para acabar com a recursividade, ocorre o StackOverFlow, estourando o limite desse frame e um erro é colocado pela propria JVM.
+Válido lembrar que O frame(prato) é criado à cada chamada de método ou função, e o Stack(pilha de pratos) é a área da memória que armazena esses frames.
+
+-------------------------------------------------------------------------------------------------------
+Aula 02
+
+
