@@ -1,0 +1,39 @@
+Exceções vão coletar erros inesperados do fluxo de trabalho e trata eles.
+Internet cai e nao há conexão com o banco de dados,
+Há diversas formas e classes ja montadas para tratar os erros inesperados.
+
+Exceções são objetos, pertencem a classe Throwable(superclasse/mãe)
+Error e Exception
+
+Errors são situações onde não há recuperações em tempo de execução, ou seja, precisa parar o sistema, resolver e reiniciar. Ex: sistema rodando e acaba a memória disponivel: "Out of memory error".
+
+Stack é como uma "pilha de pratos", relacionado à chamadas de métodos e funções. A Stack é uma área de memória que vai armazenar essas chamadas,parametros, variáveis retornos, etc. Entretanto, se o frame(quadro) desse Stack não tiver um fim pré determinado(principalmente em funções e métodos recursivos)ou um tratamento adequado para acabar com a recursividade, ocorre o StackOverFlow, estourando o limite desse frame e um erro é colocado pela propria JVM.
+Válido lembrar que O frame(prato) é criado à cada chamada de método ou função, e o Stack(pilha de pratos) é a área da memória que armazena esses frames.
+
+-------------------------------------------------------------------------------------------------------
+Aula 02
+
+Erros /= Exception ---> SubClasses de Throwable(lançado)
+Todo error ou excpetion é lançado, mas ambos são totalmente diferentes.
+
+Exceptions podem ser Checked(checadas) ou Unchecked(nao checadas)
+Checked- filhas diretas de Exception, e, se não tratadas, lançarão erros no tempo de compilação(nao sera possivel compilar). Ex: I/O Exception//SQLException.
+Unchecked- filhas de Exception(incluindo RunTime). Quando lançadas pelo programa, o prolema está no desenvolvimento, no desenvolvedor(cagadas do dev). Ex: NUllPointe//NumberFormat//Cast.
+
+-------------------------------------------------------------------------------------------------------
+Aula 03
+
+Classe FILE possui diversos métodos relacionados à parte de arquivos do JAVA. Um, dos vários, métodos pertencentes à essa classe é o ".creteNewFile()" que automaticamente cria um novo arquivo vazio. Na assinatura desse método(pesquisar assinatura de método) existe um "throw IOException", o que significa que ao usar esse método, existe a chance de uma exception ser lançada. Ao entrar na documentação dessa Exception, vemos que ela é do tipo checked, portanto, precisamos escrever um tratamento para ela, caso contrário não compilarará.
+
+Tratamento de Checked Exceptions pode ser feito com os blocos de execução "try" e "catch".
+	Dentro de try devemos colocar o método ou a lógica que será testada/aplicada
+	O parâmetro de catch será o erro específico que se deseja tratar, não é recomendado usar de forma genérica. Como os casos de Exceptions são objetos, deve-se referenciar a Exceção com um literal. E, NUNCA SE DEVE DEIXAR O BLOCO CATCH EM BRANCO, pois isso significa não avisar que houve uma exceção, ou simplesmente que a exceção está sendo ignorada. 
+	Caso o catch pegue uma exceção, ela para de executar o corpo de try independente de onde estiver, e irá automaticamente executar o que está no corpo de catch.
+	Uma forma de resolver o bloco catch é usando o ".printStackTrace()". Esse método apenas imprime o caminho seguido pelo Stack.
+Evita-se colocar regra de negócio dentro do Catch, ou seja, dessa forma a aplicação não para.
+
+
+
+
+
+
