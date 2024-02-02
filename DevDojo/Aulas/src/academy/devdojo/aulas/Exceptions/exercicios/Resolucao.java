@@ -20,8 +20,14 @@ public class Resolucao {
 //        int[] pair = {2, 4, 6, 8, 0};
 //        int[] odd = {1, 3, 5, 7, 9};
 //        pairOrOdd(pair, odd);
-    }
+//        try {
+//            createFile();
+//        }catch (IOException e){
+//            e.printStackTrace();
+//            System.out.println("Arquivo não criado");
+//        }
 
+    }
     //    public static int division(int a, int b){
 //        try {
 //            return a/b;
@@ -76,4 +82,10 @@ public class Resolucao {
 //            System.out.println("Invalid argument. Only numbers acceptable");
 //        }
 //    }
+//    public static void createFile()throws IOException{
+//        File file = new File("Arquivo/newFile2.txt");
+//        file.createNewFile();
+//        System.out.println("Arquivo criado com sucesso em: " + file.getPath());
+//    }
+
 }
