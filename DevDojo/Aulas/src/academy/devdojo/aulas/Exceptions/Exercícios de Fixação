@@ -1,0 +1,49 @@
+1. Identificação de Exceções:
+
+Identifique se as seguintes situações levam a um erro Checked ou Unchecked:
+Divisão por zero.
+Abertura de um arquivo inexistente.
+Conversão de uma String para um número inteiro.
+
+2. Tratamento de Exceções:
+
+Escreva um bloco try-catch para lidar com a divisão por zero.
+Crie um método que abre um arquivo e utilize try-catch para tratar possíveis exceções durante a abertura do arquivo.
+
+3. Lançamento de Exceções:
+
+Crie um método que lança uma exceção personalizada (por exemplo, MinhaExcecaoPersonalizada) se um parâmetro específico não atender a um critério (por exemplo, número negativo).
+Modifique um método existente para lançar uma exceção IOException.
+
+4. Hierarquia de Exceções:
+
+Liste algumas classes que são filhas diretas de Exception e são Checked Exceptions.
+Liste algumas classes que são filhas de RuntimeException e são Unchecked Exceptions.
+
+5. Múltiplos Blocos catch:
+
+Escreva um método que manipula múltiplos tipos de exceções usando vários blocos catch distintos.
+
+6. Lidando com a Stack:
+
+Descreva o que acontece na Stack quando uma função é chamada e quando ela retorna.
+Explique como um estouro de pilha (Stack Overflow) pode ocorrer e como evitá-lo.
+
+7. Exceções em Arquivos:
+
+Utilize a classe File para criar um novo arquivo.
+Implemente o tratamento de exceções necessárias ao usar createNewFile().
+
+8. Lançamento de Exceções em Métodos:
+
+Crie um método que, se receber um parâmetro inválido, lança uma exceção Checked.
+Modifique outro método para lançar uma exceção Unchecked.
+
+9. Escolha entre try-catch e throws:
+
+Escolha um cenário onde você preferiria usar um bloco try-catch em vez de declarar throws na assinatura do método.
+Escolha outro cenário onde usar throws seria mais apropriado.
+
+10. Combinando Tratamentos:
+
+Implemente um método que combina try-catch e throws para tratar uma exceção e permitir que quem chama o método também lide com ela.
