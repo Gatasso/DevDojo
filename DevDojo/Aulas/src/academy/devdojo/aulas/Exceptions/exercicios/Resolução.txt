@@ -120,4 +120,10 @@ public static void main(String[] args) {
       }
     }
 
-
+9-) Usa-se o bloco try-catch, geralmente, em métodos que são privados, pois, assim, o tratamento das Exceções é feito
+dentro do próprio método, uma vez que métodos privados só podem ser invocados na classe que pertencem.
+Já os lançamentos de Exceptions tendem a estar presentes em métodos public, ou em métodos mais genéricos que podem ser
+aproveitados em diversas outras classes. Assim, seu tratamento não fica restrito, e cada classe pode tratar da forma que
+achar adequado.
+Entretanto, é importante salientar que essa questão deve estar à par da regra de negócios da aplicação, e que ambas as
+formas são flexíveis e irrestritas quanto à sua implementação. Sendo assim, cada projeto pode usar de formas diferentes.
