@@ -1,0 +1,65 @@
+1-)
+  -Divisão por zero ---> Unchecked
+  -Abertura de um arquivo inexistente ---> Checked
+  -Conversão de uma String para um número inteiro ---> Unchecked
+
+2-)
+a)  public static void main(String[] args) {
+        System.out.println(division(1,0));
+    }
+    public static int division(int a, int b){
+        try {
+            return a/b;
+        } catch (ArithmeticException e){
+            System.out.println("Não pode se dividir por 0");
+            e.printStackTrace();
+        } return 0;
+    }
+
+b)    public static void main(String[] args) {
+          createFile();
+      }
+      public static void createFile(){
+          File file = new File("Arquivo/newFile.txt");
+          try {
+              file.createNewFile();
+              System.out.println("Arquivo criado com sucesso: " + file);
+          }catch (IOException e){
+              e.printStackTrace();
+              System.out.println("Arquivo não criado");
+          }
+      }
+  }
+
+3-)
+a)  public static void main(String[] args) {
+     getIdade(101);
+    }
+    public static void getIdade(int age){
+        if (age < 0 || age >= 100){
+            throw new IllegalArgumentException("Idade inválida");
+        }
+        System.out.println("Idade válida");
+    }
+}
+
+b)    public static void main(String[] args) {
+          try {
+              createFile();
+          }catch (IOException e){
+              e.printStackTrace();
+              System.out.println("Arquivo não criado");
+          }
+      }
+          public static void createFile()throws IOException{
+          File file = new File("Arquivo/newFile2.txt");
+          file.createNewFile();
+          System.out.println("Arquivo criado com sucesso em: " + file.getPath());
+      }
+  }
+
+4-)
+Checked Exceptions - IOException // FileNotFoundException
+Unchecked Exceptions - ArithmeticException // OutOfBoundsException // NullPointer
+
+5-)
