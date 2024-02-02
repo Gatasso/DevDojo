@@ -36,7 +36,6 @@ Identifique se as seguintes situações levam a um erro Checked ou Unchecked:
 
 8. Lançamento de Exceções em Métodos:
 
-  -Crie um método que, se receber um parâmetro inválido, lança uma exceção Checked.
   -Modifique outro método para lançar uma exceção Unchecked.
 
 9. Escolha entre try-catch e throws:

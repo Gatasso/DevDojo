@@ -26,8 +26,9 @@ public class Resolucao {
 //            e.printStackTrace();
 //            System.out.println("Arquivo não criado");
 //        }
-
+        System.out.println(checkNumbers(10,0,5));
     }
+
     //    public static int division(int a, int b){
 //        try {
 //            return a/b;
@@ -87,5 +88,9 @@ public class Resolucao {
 //        file.createNewFile();
 //        System.out.println("Arquivo criado com sucesso em: " + file.getPath());
 //    }
-
+    public static int checkNumbers(int a, int b, int c) {
+        if (a == 0 || b == 5 || c == 10){
+            throw new RuntimeException("Invalid Number");
+        } return a+b+c;
+    }
 }
