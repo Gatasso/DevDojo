@@ -42,3 +42,24 @@ a)  public static void main(String[] args) {
         System.out.println("Idade válida");
     }
 }
+
+b)    public static void main(String[] args) {
+          try {
+              createFile();
+          }catch (IOException e){
+              e.printStackTrace();
+              System.out.println("Arquivo não criado");
+          }
+      }
+          public static void createFile()throws IOException{
+          File file = new File("Arquivo/newFile2.txt");
+          file.createNewFile();
+          System.out.println("Arquivo criado com sucesso em: " + file.getPath());
+      }
+  }
+
+4-)
+Checked Exceptions - IOException // FileNotFoundException
+Unchecked Exceptions - ArithmeticException // OutOfBoundsException // NullPointer
+
+5-)

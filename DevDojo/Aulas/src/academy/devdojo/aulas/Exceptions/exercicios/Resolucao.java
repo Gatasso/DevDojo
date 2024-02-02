@@ -14,8 +14,12 @@ public class Resolucao {
 //            e.printStackTrace();
 //            System.out.println("Arquivo não criado");
 //        }
+        int[] pair = {2, 4, 6, 8, 0};
+        int[] odd = {1, 3, 5, 7, 9};
+        pairOrOdd(pair, odd);
     }
-//    public static int division(int a, int b){
+
+    //    public static int division(int a, int b){
 //        try {
 //            return a/b;
 //        } catch (ArithmeticException e){
@@ -45,13 +49,25 @@ public class Resolucao {
 //        file.createNewFile();
 //        System.out.println("Arquivo criado com sucesso em: " + file.getPath());
 //    }
-    public static void checkEverything(){
+    public static void pairOrOdd(int[] pair, int[] odd) {
+        int[] pairAndOdd = new int[5];
         try {
+                for (int i = 0; i < odd.length; i++) {
+                    pairAndOdd[i] =  odd[i] / pair[i];
+                }
 
-        } catch (IllegalArgumentException){
-
-        }catch (){
-
+            for (int i = 0; i < pairAndOdd.length; i++) {
+                System.out.println(pairAndOdd[i]);
+            }
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+            System.out.println("Division could not be done. Math error.");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            System.out.println("Out of bounds. More arguments than expected.");
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+            System.out.println("Invalid argument. Only numbers acceptable");
         }
     }
 }
