@@ -90,3 +90,12 @@ Unchecked Exceptions - ArithmeticException // OutOfBoundsException // NullPointe
         }
     }
 }
+
+6-)
+Stack é uma área da memória destinada a guardar o fluxo da aplicação. Quando um método ou uma função é chamada, esse espaço
+na memória começa a guardar quem o chamou, parametros passados, variáveis usadas e os retornos dos métodos. Quando o método
+ou função chega ao fim, ele é removido da Stack e o fluxo continua até o fim da execução.
+Entretanto, caso o uso de memória dessa stack seja demasiadamente grande, ou infinito usando metodos recursivos(métodos que
+se chama) ocorre o StackOverFLow, que seria, basicamente, o estouro da Stack e a JVM lança um erro.
+
+7-)
