@@ -2,6 +2,7 @@ package academy.devdojo.aulas.Exceptions.exercicios;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Resolucao {
     public static void main(String[] args) {
@@ -20,15 +21,29 @@ public class Resolucao {
 //        int[] pair = {2, 4, 6, 8, 0};
 //        int[] odd = {1, 3, 5, 7, 9};
 //        pairOrOdd(pair, odd);
+//*********************************************************
 //        try {
 //            createFile();
 //        }catch (IOException e){
 //            e.printStackTrace();
 //            System.out.println("Arquivo não criado");
 //        }
-        System.out.println(checkNumbers(10,0,5));
+//*********************************************************
+//        System.out.println(checkNumbers(10,0,5));
+//        System.out.println("Insira a senha de 4 dígitos:");
+//        Scanner scanner = new Scanner(System.in);
+//        boolean validPayment = false;
+//        while(!validPayment){
+//            try {
+//                String passwordInsertUser = scanner.next();
+//                payment(1500,passwordInsertUser);
+//                validPayment = true;
+//                System.out.println("Pagamento realizado");
+//            }catch (IllegalArgumentException e){
+//                System.out.println("Senha incorreta, tente novamente");
+//            }
+//        }
     }
-
     //    public static int division(int a, int b){
 //        try {
 //            return a/b;
@@ -83,14 +98,25 @@ public class Resolucao {
 //            System.out.println("Invalid argument. Only numbers acceptable");
 //        }
 //    }
+//*********************************************************
 //    public static void createFile()throws IOException{
 //        File file = new File("Arquivo/newFile2.txt");
 //        file.createNewFile();
 //        System.out.println("Arquivo criado com sucesso em: " + file.getPath());
 //    }
-    public static int checkNumbers(int a, int b, int c) {
-        if (a == 0 || b == 5 || c == 10){
-            throw new RuntimeException("Invalid Number");
-        } return a+b+c;
-    }
+//*********************************************************
+//    public static int checkNumbers(int a, int b, int c) {
+//        if (a == 0 || b == 5 || c == 10){
+//            throw new RuntimeException("Invalid Number");
+//        } return a+b+c;
+//    }
+//*********************************************************
+//    public static boolean payment(int value, String passwordInsertUser) throws IllegalArgumentException{
+//        if (!passwordInsertUser.equals(getUserPasswordBank())){
+//            throw new IllegalArgumentException("Incorrect Password");
+//        }return true;
+//    }
+//    public static String getUserPasswordBank(){
+//        return "1234";
+//    }
 }

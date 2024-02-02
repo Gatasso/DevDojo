@@ -127,3 +127,29 @@ aproveitados em diversas outras classes. Assim, seu tratamento não fica restrit
 achar adequado.
 Entretanto, é importante salientar que essa questão deve estar à par da regra de negócios da aplicação, e que ambas as
 formas são flexíveis e irrestritas quanto à sua implementação. Sendo assim, cada projeto pode usar de formas diferentes.
+
+10-)
+    public static void main(String[] args) {
+        System.out.println("Insira a senha de 4 dígitos:");
+        Scanner scanner = new Scanner(System.in);
+        boolean validPayment = false;
+        while(!validPayment){
+            try {
+                String passwordInsertUser = scanner.next();
+                payment(1500,passwordInsertUser);
+                validPayment = true;
+                System.out.println("Pagamento realizado");
+            }catch (IllegalArgumentException e){
+                System.out.println("Senha incorreta, tente novamente");
+            }
+        }
+    }
+    //    public static int division(int a, int b){
+    public static boolean payment(int value, String passwordInsertUser) throws IllegalArgumentException{
+        if (!passwordInsertUser.equals(getUserPasswordBank())){
+            throw new IllegalArgumentException("Incorrect Password");
+        }return true;
+    }
+    public static String getUserPasswordBank(){
+        return "1234";
+    }
