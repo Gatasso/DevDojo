@@ -1,0 +1,97 @@
+Exceções vão coletar erros inesperados do fluxo de trabalho e trata eles.
+Internet cai e nao há conexão com o banco de dados,
+Há diversas formas e classes ja montadas para tratar os erros inesperados.
+
+Exceções são objetos, pertencem a classe Throwable(superclasse/mãe)
+Error e Exception
+
+Errors são situações onde não há recuperações em tempo de execução, ou seja, precisa parar o sistema, resolver e reiniciar. Ex: sistema rodando e acaba a memória disponivel: "Out of memory error".
+
+Stack é como uma "pilha de pratos", relacionado à chamadas de métodos e funções. A Stack é uma área de memória que vai armazenar essas chamadas,parametros, variáveis retornos, etc. Entretanto, se o frame(quadro) desse Stack não tiver um fim pré determinado(principalmente em funções e métodos recursivos)ou um tratamento adequado para acabar com a recursividade, ocorre o StackOverFlow, estourando o limite desse frame e um erro é colocado pela propria JVM.
+Válido lembrar que O frame(prato) é criado à cada chamada de método ou função, e o Stack(pilha de pratos) é a área da memória que armazena esses frames.
+
+-------------------------------------------------------------------------------------------------------
+Aula 02
+
+Erros /= Exception ---> SubClasses de Throwable(lançado)
+Todo error ou excpetion é lançado, mas ambos são totalmente diferentes.
+
+Exceptions podem ser Checked(checadas) ou Unchecked(nao checadas)
+Checked- filhas diretas de Exception, e, se não tratadas, lançarão erros no tempo de compilação(nao sera possivel compilar). Ex: I/O Exception//SQLException.
+Unchecked- filhas de Exception(incluindo RunTime). Quando lançadas pelo programa, o prolema está no desenvolvimento, no desenvolvedor(cagadas do dev). Ex: NUllPointe//NumberFormat//Cast.
+
+-------------------------------------------------------------------------------------------------------
+Aula 03
+
+Classe FILE possui diversos métodos relacionados à parte de arquivos do JAVA. Um, dos vários, métodos pertencentes à essa classe é o ".creteNewFile()" que automaticamente cria um novo arquivo vazio. Na assinatura desse método(pesquisar assinatura de método) existe um "throw IOException", o que significa que ao usar esse método, existe a chance de uma exception ser lançada. Ao entrar na documentação dessa Exception, vemos que ela é do tipo checked, portanto, precisamos escrever um tratamento para ela, caso contrário não compilarará.
+
+Tratamento de Checked Exceptions pode ser feito com os blocos de execução "try" e "catch".
+	Dentro de try devemos colocar o método ou a lógica que será testada/aplicada
+	O parâmetro de catch será o erro específico que se deseja tratar, não é recomendado usar de forma genérica. Como os casos de Exceptions são objetos, deve-se referenciar a Exceção com um literal. E, NUNCA SE DEVE DEIXAR O BLOCO CATCH EM BRANCO, pois isso significa não avisar que houve uma exceção, ou simplesmente que a exceção está sendo ignorada. 
+	Caso o catch pegue uma exceção, ela para de executar o corpo de try independente de onde estiver, e irá automaticamente executar o que está no corpo de catch.
+	Uma forma de resolver o bloco catch é usando o ".printStackTrace()". Esse método apenas imprime o caminho seguido pelo Stack.
+Evita-se colocar regra de negócio dentro do Catch, ou seja, dessa forma a aplicação não para.
+
+-------------------------------------------------------------------------------------------------------
+Aula 04
+
+Como lançar exceções. 
+A palavra reservada "throw" lança uma exceção de volta ao método que o chama. Podemos usar ele dentro de uma estrutura condicional no método, ou então na assinatura do método. Usando na assinatura do método, indica-se que há a possibilidade de uma exceção ocorrer nesse método. Caso seja uma Checked Exception, somos obrigados à tratar a exceção para compilar o código, mas caso seja uma Unchecked exception, podemos só devolver a exception para o método que está o chamando, entretanto, ao assinarmos o método main(ou  o último método), caso a exceção seja lançada, o código para.
+
+-------------------------------------------------------------------------------------------------------
+Aula 05
+
+Pros e Contras ao tratar Exceptions com Try-Catch:
+Pros- Código não quebrará pois está tratado
+Contras-Quem está chamando o método não tem a opção de tratar do jeito dele, depende do tratamento pré instalado                                                                                                  
+
+Quando usar Try-Catch ou throws Exception
+Tr
+y-Catch será mais usado em métodos privados, pois, como não será chamado fora da classe, então não há a necessidade de lançar uma Exception para quem está o chamando, mais fácil resolver dentro do escopo do método;
+Já o throw Excpetion tende a ser usado em métodos que são publicos, pois, assim, quem está o chamando tem a liberdade para tratar a Exceção sem afetar a regra de negócio(ou escopo o método) e de acordo com sua necessidade específica.
+Há ainda a possiblidade de usar os dois tratamentos, onde queremos tratar o erro, aplicar a regra de negócio e ainda assim devolver a Exceção para quem o chamou.
+                                                                                                                                                                                                                                                                                                                                             
+Mas não há uma obrigatoriedade, mas é uma questão de adaptabilidade de projeto para projeto
+
+-------------------------------------------------------------------------------------------------------
+Aula 06
+Bloco finally é uma extensão do bloco try-catch, que sempre será executado, independente de ter capturado uma exceção ou não. ELe também é executado antes de dar o retorno do método. Pode ser utilizado sem o catch, entretanto, as boas práticas da programação em JAVA dizem que não deve-se ignorar a exceção sem trata-la minimamente.
+O uso do bloco finally é mais esepcífico, porém de muita utilidade quando precisa rodar algum pedaço de código havendo exceção ou não.
+
+-------------------------------------------------------------------------------------------------------
+Aula 07
+
+Mulltiple Excpetion Catches. Quando um método pode, ou vai, retornar exceções multiplas(protocolos em SpringBoot,por exemplo) é possível capturar mais de uma exception em um unico bloco catch.
+Entretanto, há algumas regras de funcionamento:
+-As excpetions mais genéricas devem ir para o ultimo bloco catch,pois, caso esteja acima, as suas subclasses não precisarão ser escritas.
+-Com exceptions de heranças diferentes, deve-se lembrar de assinar o método com todas elas, separando-as com vírgula.
+
+-------------------------------------------------------------------------------------------------------
+Aula 08
+
+MultiCatch em linha é um recurso oferecido pelo JAVA para melhorar legibilidade do código. Pode-se colocar Exceptions que não estão em mesma linha de herança na mesma linha de catch, separando-os por "|". O uso desse recurso limita o tratamento das Exceptions que estão na mesma linha, pois o comportamento desse catch será único para todos. 
+Ao trabalhar com multiplas Exceptions em linha, não dá para associar uma nova exception na variavel de referencia da exception em questão, pois, o java transofrma essa variavel de referencia em "final". Assim possibilita-se a melhor legibilidade do codigo, e não compromete códigos de versões anteriores.
+ex: "catch(Exception e){
+         e = new RunTimeExcpetion();"   -> Permitido
+         
+    "catch(IllegalArgumentException | ArithmeticException e){  
+        ~final~ e =  IllegalArgumentException()| ArithmeticException()" 
+        
+-------------------------------------------------------------------------------------------------------
+Aula 09   
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
