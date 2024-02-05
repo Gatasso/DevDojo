@@ -3,8 +3,8 @@ package academy.devdojo.aulas.Exceptions.desafios.Problematica3;
 import java.util.Scanner;
 
 public class Account implements Operations {
-    private Budget budget;
-    private String name;
+    Budget budget;
+    String name;
 
     public Account(String name) {
         this.name = name;
