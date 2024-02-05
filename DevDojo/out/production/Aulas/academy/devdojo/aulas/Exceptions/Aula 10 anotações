@@ -95,8 +95,13 @@ A sequência de abertura é inversa à de fechamento:
 Console: "Fechando Leitor 2
 	   Fechando Leitor 1"
 
-
-
+-------------------------------------------------------------------------------------------------------
+Aula 10
+   
+Exceção Customizada
+Apesar da vasta gama de exceções fornecidas pelo JAVA, nem todos os problemas envolvendo as regras de negócio estarão disponíveis, portanto, é possível criar exceções personalizadas para atender corretamente cada projeto.
+Nome: xxxxxxException() -> Sempre colocar exception na frente do nome do erro;
+Extends: Checked(extends Exception) ou Unchecked(extends RunTimeException);
 
 
 
