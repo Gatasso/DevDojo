@@ -1,0 +1,39 @@
+Desafio 1:
+Contexto: Você está desenvolvendo um sistema de gestão de biblioteca.Implemente uma exceção personalizada chamada
+LivroNaoEncontradoException. Essa exceção deve ser lançada quando um usuário tenta realizar uma operação
+(por exemplo, devolver ou emprestar) com um livro que não está cadastrado na biblioteca.
+
+
+Desafio 2:
+Contexto: Imagine que você está construindo um sistema de validação para um jogo online. Crie uma exceção personalizada
+chamada IdadeInvalidaException que será lançada quando um usuário tentar se registrar com uma idade inferior a 13 anos,
+já que, para este jogo, é necessário ter pelo menos 13 anos.
+
+
+Desafio 3:
+Contexto: Você está desenvolvendo um aplicativo de gestão de contas bancárias. Crie uma exceção personalizada chamada
+SaldoInsuficienteException. Essa exceção deve ser lançada quando um usuário tenta realizar uma transação
+(por exemplo, saque) que resultaria em um saldo negativo na conta.
+
+
+Desafio 4:
+Contexto: Em um sistema de reservas de passagens aéreas, crie uma exceção personalizada chamada
+AssentoIndisponivelException. Essa exceção deve ser lançada quando um usuário tenta reservar um assento que já está ocupado.
+
+
+Desafio 5:
+Contexto: Você está trabalhando em um sistema de comércio eletrônico. Crie uma exceção personalizada chamada
+ProdutoForaDeEstoqueException. Essa exceção deve ser lançada quando um usuário tenta adicionar um produto ao carrinho,
+mas a quantidade desejada está indisponível no estoque.
+
+
+Desafio 6:
+Contexto: Desenvolvendo um aplicativo de agenda, crie uma exceção personalizada chamada DataInvalidaException.
+Essa exceção deve ser lançada quando um usuário tenta cadastrar um evento com uma data no passado, pois no seu aplicativo
+só são permitidos eventos futuros.
+
+
+Desafio 7:
+Contexto: Em um sistema de gerenciamento de tarefas, crie uma exceção personalizada chamada PrioridadeInvalidaException.
+Essa exceção deve ser lançada quando um usuário tenta definir uma prioridade que não está dentro do intervalo
+permitido (por exemplo, de 1 a 5).
