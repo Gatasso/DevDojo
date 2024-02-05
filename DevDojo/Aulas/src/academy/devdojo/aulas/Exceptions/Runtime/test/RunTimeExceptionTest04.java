@@ -15,7 +15,7 @@ public class RunTimeExceptionTest04 {
         }catch (ArithmeticException e){
             System.out.println("Dentro do ArithmeticException");
         }catch (RuntimeException e){
-            System.out.println("Dentro do RuntimeException");
+            System.out.println("Dentro do RuntimeException ");
         }
     }
 }
