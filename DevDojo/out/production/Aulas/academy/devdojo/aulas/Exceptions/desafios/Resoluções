@@ -1,0 +1,68 @@
+Desafio 1:
+public class Library {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Book book1 = new Book("Estoic Diary", "001");
+        Book book2 = new Book("Dom Casmurro", "002");
+        Book book3 = new Book("Clockwork Orange", "003");
+        Book book4 = new Book("Animal Farm ", "004");
+        Book[] collection = {book1,book2,book3,book4};
+        try {
+            System.out.println("What book are you looking for? Enter the name:");
+            String bookName = scanner.nextLine();
+            rentBook(bookName,collection);
+        } catch (BookNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public static Book rentBook(String userWishBook,Book[]collection) throws BookNotFoundException{
+        for (Book book : collection) {
+            if (userWishBook.equals(book.getName())){
+                System.out.println("The book " + book.getName() + " is now rented for 7 days." );
+                return book;
+            } throw new BookNotFoundException();
+        } return null;
+    }
+}
+----------------------------------------------------Exception-----------------------------------------------------------
+public class BookNotFoundException extends Exception {
+    public BookNotFoundException() {
+        super("Livro não cadastrado na biblioteca");
+    }
+
+    public BookNotFoundException(String message) {
+        super(message);
+    }
+}
+
+***********************************************************************************************************************
+***********************************************************************************************************************
+Desafio 2:
+public class GameInterface {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.println("Bem vindo ao MGRGAME");
+            System.out.println("Nos informe seu nome e sua idade para continuar:");
+            String name = scanner.nextLine();
+            int age = scanner.nextInt();
+            checkAge(age);
+        } catch (UnderAgeException e){
+            e.printStackTrace();
+        }
+    }
+    private static boolean checkAge(int age)throws UnderAgeException {
+        if (age < 13) throw new UnderAgeException();
+        else return true;
+    }
+}
+----------------------------------------------------Exception-----------------------------------------------------------
+public class UnderAgeException extends Exception{
+    public UnderAgeException() {
+        super("You must have 13 years old to play this game");
+    }
+}
+
+***********************************************************************************************************************
+***********************************************************************************************************************
+Desafio 3:

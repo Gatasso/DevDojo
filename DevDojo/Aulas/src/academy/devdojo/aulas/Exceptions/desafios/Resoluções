@@ -65,3 +65,110 @@ public class UnderAgeException extends Exception{
 
 ***********************************************************************************************************************
 ***********************************************************************************************************************
+Desafio 3:
+public class BankApp {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Account acc01 = new Account("JayJay");
+        System.out.println("Which operation would you like to do today?");
+        System.out.println("1-Transfer // // 2-Payment");
+        int choose = scanner.nextInt();
+        switch (choose) {
+            case 1:
+                acc01.transfer(scanner);
+                break;
+            case 2:
+                acc01.payment(scanner);
+                break;
+        }
+    }
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public class Account implements Operations {
+    private Budget budget;
+    private String name;
+
+    public Account(String name) {
+        this.name = name;
+        this.budget = new Budget();
+    }
+
+    @Override
+    public void transfer(Scanner scanner) {
+        boolean isExecuted = false;
+        while (!isExecuted) {
+            System.out.println("Transfer Value");
+            double value = scanner.nextDouble();
+            try {
+                budget.transfer(value);
+                System.out.println("Transfer Done");
+                System.out.println(getName() + ",your budget is now: " + budget.getBudget());
+                isExecuted = true;
+            } catch (NotBudgetEnoughException e) {
+                e.printStackTrace();
+                System.out.println("The transfer couldnt be done. Try Again");
+            }
+        }
+    }
+
+    @Override
+    public void payment(Scanner scanner) {
+        boolean isPaid = false;
+        while (!isPaid) {
+        System.out.println("Payment Value:");
+        double value = scanner.nextDouble();
+            try {
+                budget.transfer(value);
+                System.out.println("Payment done");
+                System.out.println(getName() + ",your budget is now: " + budget.getBudget());
+                isPaid = true;
+            } catch (NotBudgetEnoughException e) {
+                e.printStackTrace();
+                System.out.println("Payment couldnt be done. Check the value");
+            }
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public interface Operations {
+    void transfer(Scanner scanner);
+    void payment(Scanner scanner);
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public class Budget {
+    private double budget;
+    private final double INITIAL_BUDGET = 1000;
+
+    public Budget() {
+        this.budget = INITIAL_BUDGET;
+    }
+    public double transfer(double amount) throws NotBudgetEnoughException{
+        if (amount > this.budget){
+            throw new NotBudgetEnoughException();
+        } else{
+            this.budget -= amount;
+            return this.budget;
+        }
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+}
+----------------------------------------------------Exception-----------------------------------------------------------
+public class NotBudgetEnoughException extends Exception{
+    public NotBudgetEnoughException() {
+        super("You dont have budget enough to complete the transaction");
+    }
+
+    public NotBudgetEnoughException(String message) {
+        super(message);
+    }
+}
+
+***********************************************************************************************************************
+***********************************************************************************************************************
