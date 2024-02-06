@@ -172,3 +172,103 @@ public class NotBudgetEnoughException extends Exception{
 
 ***********************************************************************************************************************
 ***********************************************************************************************************************
+Desafio 4:
+public class PlaneInterface {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Plane plane = new Plane(3, 10, 3);
+        try {
+            System.out.println("Choose the seat on the plane");
+            String choice = scanner.nextLine();
+            Seat chosenSeat = plane.findSeat(choice);
+            setSeatReservation(chosenSeat);
+        }catch (UnavailableSeatException e){
+            e.printStackTrace();
+            System.out.println("Unavailable Seat. Please choose another one");
+        }
+    }
+    private static void setSeatReservation(Seat chosenSeat) throws UnavailableSeatException{
+        if(chosenSeat.isOccupied()) {
+            throw new UnavailableSeatException();
+        }else {
+            System.out.println("Reservation confirmed on " + chosenSeat);
+            chosenSeat.setOccupied(true);
+        }
+    }
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public class Plane {
+    public Seat[] seatPosition;
+    private int column, lines, aisle;
+    private final int MAX_CAPACITY;
+
+    public Plane(int column, int lines, int aisle) {
+        this.column = column;
+        this.lines = lines;
+        this.aisle = aisle;
+        this.MAX_CAPACITY = (this.column * this.lines * this.aisle);
+        this.seatPosition = new Seat[this.MAX_CAPACITY];
+        createSeats();
+    }
+
+    private void createSeats() {
+        int x = 0;
+        char row = 'A';
+        for (int i = 0; i < this.lines; i++) {
+            for (int j = 0; j <= this.aisle; j++) {
+                for (int k = 0; k <= this.column; k++) {
+                    if (x < MAX_CAPACITY) {
+                        this.seatPosition[x] = new Seat(row, k + 1);
+                        x++;
+                    }
+                }
+                row++;
+            }
+        }
+    }
+    public Seat findSeat(String seatName){
+        for (Seat seat : seatPosition) {
+            if (seat!=null && seatName.equals(seat.toString())){
+                return seat;
+            }
+        } return null;
+    }
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public class Seat {
+    private boolean isOccupied;
+    private char row;
+    private int column;
+
+    public Seat(char a, int b) {
+        this.isOccupied = false;
+        this.row = a;
+        this.column = b;
+    }
+
+    @Override
+    public String toString() {
+        return "Seat " + row + column;
+    }
+
+    public boolean isOccupied() {
+        return isOccupied;
+    }
+
+    public void setOccupied(boolean occupied) {
+        isOccupied = occupied;
+    }
+}
+----------------------------------------------------Exception-----------------------------------------------------------
+public class UnavailableSeatException extends Exception{
+    public UnavailableSeatException() {
+        super("This seat is already occupied");
+    }
+
+    public UnavailableSeatException(String message) {
+        super(message);
+    }
+}
+***********************************************************************************************************************
+***********************************************************************************************************************
+Desafio 5:
