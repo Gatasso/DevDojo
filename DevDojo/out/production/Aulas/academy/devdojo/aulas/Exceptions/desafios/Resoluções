@@ -272,3 +272,108 @@ public class UnavailableSeatException extends Exception{
 ***********************************************************************************************************************
 ***********************************************************************************************************************
 Desafio 5:
+public class ShopApp {
+    public static void main(String[] args) {
+        Product keyboard = new Product("Keyboard",5);
+        Product mouse = new Product("Mouse",10);
+        Product mousePad = new Product("MousePad",7);
+        Product nullProduct = null;
+        ShoppingCart yourShoppingCart= new ShoppingCart();
+        System.out.println(keyboard);
+        System.out.println(mouse);
+        System.out.println(mousePad);
+        System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+        try {
+            yourShoppingCart.addCart(keyboard, 5);
+            System.out.println("Added to your cart");
+            System.out.println(keyboard);
+            System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+            yourShoppingCart.addCart(mouse, 5);
+            System.out.println("Added to your cart");
+            System.out.println(mouse);
+            System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+            yourShoppingCart.addCart(mousePad, 5);
+            System.out.println("Added to your cart");
+            System.out.println(mousePad);
+            System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+            yourShoppingCart.addCart(nullProduct,1);
+        }catch (OutOfStorageException e){
+            e.printStackTrace();
+            System.out.println("Quantity not available on stock");
+        } catch (ProductDontExistException e){
+            e.printStackTrace();
+            System.out.println("Product not available on our catalogue");
+        }
+    }
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public class Product {
+    private final String name;
+    private int quantity;
+
+    public Product(String name, int initialQuantity) {
+        this.name = name;
+        this.quantity = initialQuantity;
+    }
+
+    public void removeItems(int quantityOnCart)throws OutOfStorageException{
+        if (quantityOnCart > this.quantity){
+            throw new OutOfStorageException();
+        }else {
+            this.quantity -= quantityOnCart;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "There is " + quantity +" " + name + " available";
+    }
+}
+----------------------------------------- // -------------------------- // ---------------------------------------------
+public class ShoppingCart {
+    private Product[] products;
+    private int size;
+
+    public ShoppingCart() {
+        int INITIAL_SIZE = 5;
+        products = new Product[INITIAL_SIZE];
+        size = 0;
+    }
+
+    public void addCart(Product product, int quantity) throws OutOfStorageException, ProductDontExistException {
+        if (product == null) {
+            throw new ProductDontExistException();
+        } else {
+            products[size] = product;
+            product.removeItems(quantity);
+            size++;
+            if (size == products.length) {
+                increaseCapacity();
+            }
+        }
+    }
+
+    private void increaseCapacity() {
+        int newCapacity = products.length * 2;
+        products = Arrays.copyOf(products, newCapacity);
+    }
+}
+----------------------------------------------------Exception-----------------------------------------------------------
+public class OutOfStorageException extends Exception{
+    public OutOfStorageException() {
+        super("This product is not available on this Quantity");
+    }
+}
+----------------------------------------------------Exception-----------------------------------------------------------
+public class ProductDontExistException extends Exception{
+    public ProductDontExistException() {
+        super("This product dont exists");
+    }
+}
+***********************************************************************************************************************
+***********************************************************************************************************************
+Desafio 6: Desenvolve ao aprender a mexer com data.
+
+***********************************************************************************************************************
+***********************************************************************************************************************
+Desafio 7:
