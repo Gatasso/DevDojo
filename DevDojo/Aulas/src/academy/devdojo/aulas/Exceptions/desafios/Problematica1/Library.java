@@ -20,10 +20,10 @@ public class Library {
     }
     public static Book rentBook(String userWishBook,Book[]collection) throws BookNotFoundException{
         for (Book book : collection) {
-            if (userWishBook.equals(book.getName())){
-                System.out.println("The book " + book.getName() + " is now rented for 7 days." );
-                return book;
-            } throw new BookNotFoundException();
+            if (!userWishBook.equals(book.getName())){
+                throw new BookNotFoundException();
+            } System.out.println("The book " + book.getName() + " is now rented for 7 days." );
+            return book;
         } return null;
     }
 }
