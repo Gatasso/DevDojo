@@ -1,4 +1,7 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica5;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica5.Entities;
+
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Exceptions.OutOfStorageException;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Exceptions.ProductDontExistException;
 
 import java.util.Arrays;
 

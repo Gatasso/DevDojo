@@ -1,5 +1,9 @@
 package academy.devdojo.aulas.Exceptions.desafios.Problematica4;
 
+import academy.devdojo.aulas.Exceptions.desafios.Problematica4.Entities.Plane;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica4.Entities.Seat;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica4.Exceptions.UnavailableSeatException;
+
 import java.util.Scanner;
 
 public class PlaneInterface {

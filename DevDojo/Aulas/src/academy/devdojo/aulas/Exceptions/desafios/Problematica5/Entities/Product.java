@@ -1,4 +1,6 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica5;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica5.Entities;
+
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Exceptions.OutOfStorageException;
 
 public class Product {
     private final String name;
@@ -9,7 +11,7 @@ public class Product {
         this.quantity = initialQuantity;
     }
 
-    public void removeItems(int quantityOnCart)throws OutOfStorageException{
+    public void removeItems(int quantityOnCart)throws OutOfStorageException {
         if (quantityOnCart > this.quantity){
             throw new OutOfStorageException();
         }else {

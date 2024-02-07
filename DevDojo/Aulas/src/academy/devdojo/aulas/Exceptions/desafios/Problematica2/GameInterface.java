@@ -1,5 +1,7 @@
 package academy.devdojo.aulas.Exceptions.desafios.Problematica2;
 
+import academy.devdojo.aulas.Exceptions.desafios.Problematica2.Exceptions.UnderAgeException;
+
 import java.util.Scanner;
 
 public class GameInterface {

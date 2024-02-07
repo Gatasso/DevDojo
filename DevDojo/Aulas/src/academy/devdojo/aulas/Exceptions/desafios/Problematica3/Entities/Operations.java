@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica3;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica3.Entities;
 
 import java.util.Scanner;
 

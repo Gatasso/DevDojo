@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica2;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica2.Exceptions;
 
 public class UnderAgeException extends Exception{
     public UnderAgeException() {

@@ -1,5 +1,8 @@
 package academy.devdojo.aulas.Exceptions.desafios.Problematica7;
 
+import academy.devdojo.aulas.Exceptions.desafios.Problematica7.Entities.Task;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica7.Exceptions.InvalidPriorityException;
+
 public class App {
     public static void main(String[] args) {
         try {

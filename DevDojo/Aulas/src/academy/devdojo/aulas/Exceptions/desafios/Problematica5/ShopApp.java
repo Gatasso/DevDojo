@@ -1,5 +1,10 @@
 package academy.devdojo.aulas.Exceptions.desafios.Problematica5;
 
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Entities.Product;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Entities.ShoppingCart;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Exceptions.OutOfStorageException;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica5.Exceptions.ProductDontExistException;
+
 public class ShopApp {
     public static void main(String[] args) {
         Product keyboard = new Product("Keyboard",5);

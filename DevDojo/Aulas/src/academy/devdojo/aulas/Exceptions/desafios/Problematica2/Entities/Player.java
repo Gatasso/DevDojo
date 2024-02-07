@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica2;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica2.Entities;
 
 public class Player {
     private String name;

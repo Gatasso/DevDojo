@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica1;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica1.Entities;
 
 public class Book {
     String name,code;

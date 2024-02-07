@@ -1,4 +1,6 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica3;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica3.Entities;
+
+import academy.devdojo.aulas.Exceptions.desafios.Problematica3.Exceptions.NotBudgetEnoughException;
 
 import java.util.Scanner;
 

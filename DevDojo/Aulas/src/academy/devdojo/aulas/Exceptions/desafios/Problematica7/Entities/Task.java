@@ -1,10 +1,12 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica7;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica7.Entities;
+
+import academy.devdojo.aulas.Exceptions.desafios.Problematica7.Exceptions.InvalidPriorityException;
 
 public class Task {
     private int priority;
     private String name;
 
-    public Task(String name,int priority) throws InvalidPriorityException{
+    public Task(String name,int priority) throws InvalidPriorityException {
         this.name = name;
         if (priority < 1 || priority > 5){
             throw new InvalidPriorityException();

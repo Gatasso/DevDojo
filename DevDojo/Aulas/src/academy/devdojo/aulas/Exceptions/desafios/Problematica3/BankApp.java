@@ -1,5 +1,7 @@
 package academy.devdojo.aulas.Exceptions.desafios.Problematica3;
 
+import academy.devdojo.aulas.Exceptions.desafios.Problematica3.Entities.Account;
+
 import java.util.Scanner;
 
 public class BankApp {

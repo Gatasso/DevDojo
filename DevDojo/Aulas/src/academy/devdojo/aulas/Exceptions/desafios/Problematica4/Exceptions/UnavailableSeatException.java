@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica4;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica4.Exceptions;
 
 public class UnavailableSeatException extends Exception{
     public UnavailableSeatException() {

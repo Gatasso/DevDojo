@@ -1,4 +1,6 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica3;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica3.Entities;
+
+import academy.devdojo.aulas.Exceptions.desafios.Problematica3.Exceptions.NotBudgetEnoughException;
 
 public class Budget {
     private double budget;
@@ -6,7 +8,7 @@ public class Budget {
     public Budget() {
         this.budget = 1000;
     }
-    public void transfer(double amount) throws NotBudgetEnoughException{
+    public void transfer(double amount) throws NotBudgetEnoughException {
         if (amount > this.budget){
             throw new NotBudgetEnoughException();
         } else{

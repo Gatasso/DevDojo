@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica7;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica7.Exceptions;
 
 public class InvalidPriorityException extends Exception{
     public InvalidPriorityException() {

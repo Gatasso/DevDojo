@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica5;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica5.Exceptions;
 
 public class ProductDontExistException extends Exception{
     public ProductDontExistException() {

@@ -1,5 +1,8 @@
 package academy.devdojo.aulas.Exceptions.desafios.Problematica1;
 
+import academy.devdojo.aulas.Exceptions.desafios.Problematica1.Entities.Book;
+import academy.devdojo.aulas.Exceptions.desafios.Problematica1.Exceptions.BookNotFoundException;
+
 import java.util.Scanner;
 
 public class Library {

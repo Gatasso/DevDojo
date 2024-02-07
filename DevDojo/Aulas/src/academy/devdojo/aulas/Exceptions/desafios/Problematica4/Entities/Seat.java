@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica4;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica4.Entities;
 
 public class Seat {
     private boolean isOccupied;

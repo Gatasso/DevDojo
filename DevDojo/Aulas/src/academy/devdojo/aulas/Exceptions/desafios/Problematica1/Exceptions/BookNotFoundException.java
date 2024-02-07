@@ -1,4 +1,4 @@
-package academy.devdojo.aulas.Exceptions.desafios.Problematica1;
+package academy.devdojo.aulas.Exceptions.desafios.Problematica1.Exceptions;
 
 public class BookNotFoundException extends Exception {
     public BookNotFoundException() {
