@@ -1,0 +1,10 @@
+Escrever em arquivos mas de forma um pouco menos otimizada;
+
+É normal o encadeamento de classes para mexer com arquivos:
+
+BufferedWriter = FileWriter(file);
+
+write() escreve dentro do arquivo, entretanto lança excpetion checked e precisa ser tratada. Por estar mexendo com SO, ao abrir o método, devemos dar a instrução para fechá-lo: close(), entretanto, por FileWriter ser closeable, podemos usar o Try with Resources, ou seja, o proprio bloco try se encarrega de fechar os recursos externos abertos
+
+Devemos tomar cuidado com o buffer de dados trocados entre o programa e o SO, pois corre se o risco de fecharmos o programa antes da comunicação se realizar e dados podem ser corrompidos... por isso, existe o método flush();
+

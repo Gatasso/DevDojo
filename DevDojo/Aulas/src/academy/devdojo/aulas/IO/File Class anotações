@@ -1,0 +1,9 @@
+Ao criar uma instancia em file podemos apenas dar nome ao documento, ou passaro caminho absoluto para onde deseja-se salvar o arquivo;
+
+Método createNewFile() lança IOexception(checked), logo, precisamos dar tratamento ao chamá-lo, e retorna booleano;
+
+delete() retorna boolean também, e por convenção de boa pratica, é recomendavel verficar se existe um arquivo com exists() antes de deletar;
+
+getAbsolutePath() pega o path inteiro do arquivo, enquanto getPath() pega apenas o nome do arquivo
+
+lastModified() retorna um long em ms para representar a ultima modificação do arquivo e usar um New Date para representar em data convencional
